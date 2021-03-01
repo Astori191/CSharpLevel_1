@@ -12,19 +12,18 @@ namespace HomeWork_4
 
     class ArrayClass
     {
-        private int[] myArray;
+        private double[] myArray;
         Random r = new Random();
 
         public ArrayClass(int n)
         {
             if (n == 0) throw new ArgumentException();
-            myArray = new int[n];
+            myArray = new double[n];
             for (int i = 0; i < n; i++)
             {
-                myArray[i] = r.Next(-10000, 10000);
+                myArray[i] = r.Next(1, 100);
             }        
         }
-
         public void PrintArray()
         {
             int length = myArray.Length;
@@ -32,6 +31,24 @@ namespace HomeWork_4
             {
                 Console.WriteLine($"Array element {i}: {myArray[i]}");
             }
+        }
+
+        public void FindPairs()
+        {
+            int length = myArray.Length;
+            int count = 0;
+            for (int i = 0; i < length; i++)
+            {
+                if (myArray[i] % 3 == 0 || myArray[i+1] % 3 == 0)
+                {
+                    count++;                 
+                }
+                else
+                {
+                    Console.WriteLine("There are no such pairs!");
+                }
+            }
+            Console.WriteLine($"Pairs count: {count}");
         }
     }
 }

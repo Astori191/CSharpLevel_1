@@ -8,6 +8,7 @@ namespace HomeWork_4
         {
             ArrayClass array = new ArrayClass(12);
             array.PrintArray();
+            array.FindPairs();
         }
 
 
