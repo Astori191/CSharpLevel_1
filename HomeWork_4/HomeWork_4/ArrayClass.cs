@@ -24,6 +24,11 @@ namespace HomeWork_4
                 myArray[i] = r.Next(1, 100);
             }        
         }
+
+        //public ArrayClass(int n, int )
+
+
+
         public void PrintArray()
         {
             int length = myArray.Length;
@@ -42,11 +47,7 @@ namespace HomeWork_4
                 if (myArray[i] % 3 == 0 || myArray[i+1] % 3 == 0)
                 {
                     count++;                 
-                }
-                else
-                {
-                    Console.WriteLine("There are no such pairs!");
-                }
+                }              
             }
             Console.WriteLine($"Pairs count: {count}");
         }
