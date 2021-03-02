@@ -6,11 +6,17 @@ namespace HomeWork_4
     {
         static void Main(string[] args)
         {
-            ArrayClass array = new ArrayClass(20);
+            ArrayClass array = new ArrayClass(4);
             array.PrintArray();
             array.FindPairs();
-            //ArrayClass array2 = new ArrayClass(6{ });
 
+            int size = 10;
+            int initialValue = 4;
+            int step = 6;
+
+            ArrayClass arrayMod= new ArrayClass(size, initialValue, step);
+            arrayMod.PrintArray();
+            Console.WriteLine($"Array sum: {arrayMod.Sum}");
         }
 
 
