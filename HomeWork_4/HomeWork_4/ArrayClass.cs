@@ -48,7 +48,7 @@ namespace HomeWork_4
             myArray = new int[n];
             for (int i = 0; i < n; i++)
             {
-                myArray[i] = r.Next(1, 100);
+                myArray[i] = r.Next(1, 30);
             }        
         }
         /// <summary>
@@ -71,12 +71,56 @@ namespace HomeWork_4
         public int[] Inverse()
         {
             int[] inverseArray = myArray;
-            int length = myArray.Length;
+            int length = inverseArray.Length;
             for (int i = 0; i < length; i++)
             {
                 inverseArray[i] = myArray[i] * (-1);
-            }
+                Console.WriteLine($"{inverseArray[i]}");
+            } 
             return inverseArray;
+        }
+
+        public int[] Multi(int number)
+        {
+            int[] multiArray = myArray;
+            for (int i = 0; i < multiArray.Length; i++)
+            {
+                multiArray[i] = myArray[i] * number;         
+                Console.WriteLine($"{multiArray[i]}");
+            }
+            return multiArray;
+        }
+
+        public int Max
+        {
+            get
+            {
+                int max = myArray[0];
+                for (int i = 1; i < myArray.Length; i++)
+                {
+                    if (myArray[i] > max)
+                    {
+                        max = myArray[i];
+                    }
+                }
+                return max;
+            }
+        }
+
+        public int MaxCount
+        {
+            get
+            {
+                int count = 0;
+                foreach(int i in myArray)
+                {
+                    if (i == Max)
+                    {
+                        count++;
+                    }
+                }
+                return count;
+            }
         }
 
         public void PrintArray()
