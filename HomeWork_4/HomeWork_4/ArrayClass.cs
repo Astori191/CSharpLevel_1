@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Text;
+using System.IO;
+using System.Linq;
 
 namespace HomeWork_4
 {
@@ -9,6 +11,11 @@ namespace HomeWork_4
     //программу, позволяющую найти и вывести количество пар элементов массива, в которых только
     //одно число делится на 3. В данной задаче под парой подразумевается два подряд идущих
     //элемента массива.Например, для массива из пяти элементов: 6; 2; 9; –3; 6 ответ — 2.
+
+    //а) Класс должен содержать статический метод, который принимает на вход массив и решает задачу 1;
+    //б) * Добавьте статический метод для считывания массива из текстового файла.Метод должен
+    //возвращать массив целых чисел;
+    //в)** Добавьте обработку ситуации отсутствия файла на диске.
 
     //3. Дописать класс для работы с одномерным массивом. Реализовать конструктор, создающий
     //массив определенного размера и заполняющий массив числами от начального значения с
@@ -51,6 +58,25 @@ namespace HomeWork_4
                 myArray[i] = r.Next(1, 30);
             }        
         }
+
+        public ArrayClass(string path)
+        {
+            myArray = new int[0];
+
+            if (File.Exists(path))
+            {
+                string text = File.ReadAllText(path);
+                string[] t = text.Split(' ');
+
+                myArray = new int[t.Length];
+                for (int i = 0; i < myArray.Length; i++)
+                {
+                    myArray[i] = int.Parse(t[i]);
+                }
+            }
+        }
+
+
         /// <summary>
         /// Свойство, возвращающее сумму элементов массива
         /// </summary>
@@ -67,7 +93,10 @@ namespace HomeWork_4
                 return sum;
             }
         }
-
+        /// <summary>
+        /// Метод меняющий знак элементов массива
+        /// </summary>
+        /// <returns>массив отрицательных значений</returns>
         public int[] Inverse()
         {
             int[] inverseArray = myArray;
@@ -79,7 +108,11 @@ namespace HomeWork_4
             } 
             return inverseArray;
         }
-
+        /// <summary>
+        /// Метод умножающий каждый элемент на заданное число
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
         public int[] Multi(int number)
         {
             int[] multiArray = myArray;
@@ -90,7 +123,9 @@ namespace HomeWork_4
             }
             return multiArray;
         }
-
+        /// <summary>
+        /// Свойство для нахождения максимального элемента
+        /// </summary>
         public int Max
         {
             get
@@ -106,7 +141,9 @@ namespace HomeWork_4
                 return max;
             }
         }
-
+        /// <summary>
+        /// Подсчет количества максимальных элементов
+        /// </summary>
         public int MaxCount
         {
             get
@@ -131,7 +168,9 @@ namespace HomeWork_4
                 Console.WriteLine($"Array element {i}: {myArray[i]}");
             }
         }
-
+        /// <summary>
+        /// Нахождение пар
+        /// </summary>
         public void FindPairs()
         {
             int length = myArray.Length - 1;
@@ -145,5 +184,6 @@ namespace HomeWork_4
             }
             Console.WriteLine($"Pairs count: {count}");
         }
+
     }
 }

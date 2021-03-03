@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace HomeWork_4
 {
@@ -6,6 +7,7 @@ namespace HomeWork_4
     {
         static void Main(string[] args)
         {
+
             ArrayClass array = new ArrayClass(4);
             array.PrintArray();
             array.FindPairs();
@@ -27,7 +29,11 @@ namespace HomeWork_4
 
             array = new ArrayClass(20);
             array.PrintArray();
-            Console.WriteLine($"Max count: {array.MaxCount}"); 
+            Console.WriteLine($"Max count: {array.MaxCount}");
+
+            string path = @"C:\temp\Array.txt";
+            array = new ArrayClass(path);
+            array.PrintArray();
 
         }
 
