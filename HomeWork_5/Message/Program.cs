@@ -2,6 +2,9 @@
 
 namespace Permutation
 {
+
+    //* Для двух строк написать метод, определяющий, является ли одна строка перестановкой другой.
+    //Например: badc являются перестановкой abcd.
     public static class StringUtils
     {
         public static bool AreMutations(string s1, string s2)
