@@ -1,0 +1,55 @@
+class ClassMessage
+    {
+        private string message;
+
+        public ClassMessage(string text)
+        {
+            this.message = text;
+        }
+
+// тут я удаляю из строки слова, которые заканчиваются символом 'e'
+public void RemoveWords(char c)
+        {
+            string[] t = message.Split(' ');
+
+            foreach(var word in t)
+            {
+                if (word.EndsWith(c))
+                {
+                    message = message.Replace(word, "");
+                }             
+            }
+            Console.WriteLine(message);
+        }
+
+// тут я хочу найти самое длинной слово. только оно уже ищется в той строке, где удалены все слова, заканчивающиеся на символе 'e'
+// так не приемлимо, нужно искать в начально заданной строке.
+// как это сделать?
+public void FindMaxLengthWord()
+        {
+            string[] t = message.Split(' ');
+            string maxLengthWord = t[0];
+            foreach(var word in t)
+            {
+                if (word.Length >= maxLengthWord.Length)
+                {
+                    maxLengthWord = word;
+                }
+            }
+            Console.WriteLine(maxLengthWord);
+        }
+        
+using System;
+
+namespace Msg
+{
+    class Program
+    {
+        static void Main()
+        {
+            string text = "One two three four five six seven eight nine ten longword";
+            ClassMessage message = new ClassMessage(text);
+
+            message.PrintWordsContainsNLetters(4);
+            message.RemoveWords('e');
+            message.FindMaxLengthWord();
