@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeWork_5", "HomeWork_5\Ho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Permutation", "Message\Permutation.csproj", "{FCEF75D2-2B35-4B21-9FDE-CF56383FAA08}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Msg", "Msg\Msg.csproj", "{E755541C-1231-42F1-B8A9-8DDD903E7A76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCEF75D2-2B35-4B21-9FDE-CF56383FAA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCEF75D2-2B35-4B21-9FDE-CF56383FAA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCEF75D2-2B35-4B21-9FDE-CF56383FAA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E755541C-1231-42F1-B8A9-8DDD903E7A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E755541C-1231-42F1-B8A9-8DDD903E7A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E755541C-1231-42F1-B8A9-8DDD903E7A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E755541C-1231-42F1-B8A9-8DDD903E7A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
