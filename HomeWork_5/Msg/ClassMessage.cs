@@ -35,7 +35,7 @@ namespace Msg
             }
         }
 
-        public void RemoveWords(char c)
+        public string RemoveWords(char c)
         {
             string[] t = message.Split(' ');
             string toChange = message;
@@ -47,7 +47,7 @@ namespace Msg
                     toChange = toChange.Replace(word, "");                   
                 }             
             }
-            Console.WriteLine($"\n {toChange}");
+            return toChange;
         }
 
        private List<string> FindMaxLengthWord()
@@ -77,9 +77,7 @@ namespace Msg
             {
                 Console.WriteLine($"List: {word}");
             }
-
         }
-
         public void UseStringBuilder()
         {
             string[] t = message.Split(' ');

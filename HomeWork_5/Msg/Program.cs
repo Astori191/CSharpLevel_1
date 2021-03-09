@@ -11,7 +11,8 @@ namespace Msg
 
             message.PrintWordsContainsNLetters(4);
             Console.WriteLine();
-            message.RemoveWords('e');
+            string line = message.RemoveWords('e');
+            Console.WriteLine(line);
             Console.WriteLine();
             message.PrintLongWords();
             Console.WriteLine();

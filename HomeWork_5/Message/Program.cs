@@ -32,9 +32,6 @@ namespace Permutation
 
     class Program
     {
-
-        delegate bool Testing(string s1, string s2);
-
         static bool TestCase1()
         {
             return StringUtils.AreMutations("abc", "abc") == true;
