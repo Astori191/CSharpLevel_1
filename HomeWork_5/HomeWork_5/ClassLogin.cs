@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace HomeWork_5
 {
@@ -60,6 +61,21 @@ namespace HomeWork_5
             }
             return symbols;
         }
+        /// <summary>
+        /// Универсальный метод считывающий в строку данные из файла
+        /// </summary>
+        /// <returns>Строка символов</returns>
+        private string ReadFileUniversal()
+        {
+            string path = @"C:\temp\Chars.txt";
+            string symbols = "";
+            if (File.Exists(path))
+            {
+                symbols = File.ReadAllText(path);
+            }
+            symbols = symbols.Replace(" ", "");
+            return symbols;
+        }
 
         private static bool CheckIsDigit(string login)
         {
@@ -71,11 +87,6 @@ namespace HomeWork_5
             }
             else return true;
         }
-
-        //public bool CheckIsDigit0()
-        //{
-        //    return !char.IsDigit(login[0]);
-        //}
 
         private static bool CheckChars(string login)
         {
@@ -110,41 +121,14 @@ namespace HomeWork_5
             if (!CheckChars(this.login)) return false;
             return true;
         }
-
-        //public bool CheckChars()
-        //{
-        //    char[] symbols = ReadFileNoSpaces();
-        //    char[] loginsymbols = login.ToCharArray();
-        //    bool f = false;
-        //    if (login.Length > 2 && login.Length < 10)
-        //    {
-        //        for (int i = 0; i < loginsymbols.Length; i++)
-        //        {
-        //            for (int j = 0; j < symbols.Length; j++)
-        //            {
-        //                if (loginsymbols[i] == symbols[j]) Console.WriteLine("vse ok");
-        //            }
-        //        }
-        //    }
-        //    Console.WriteLine(f);
-        //    return f;
-        //}
-
+        //TODO 
+        // сделать регулярку
+        public void UseRegex()
+        {
+            Regex myReg = new Regex("^[a-z]+[A-Z0-9]{2,10}");
+        }
 
 
     }
-
 }
 
-
-//private string ReadFileUniversal()
-//{
-//    string path = @"C:\temp\Chars.txt";
-//    string symbols = "";
-//    if (File.Exists(path))
-//    {
-//        symbols = File.ReadAllText(path);
-//    }
-//    symbols = symbols.Replace(" ", "");
-//    return symbols;
-//}
