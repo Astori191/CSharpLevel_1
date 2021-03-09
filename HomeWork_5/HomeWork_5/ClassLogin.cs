@@ -119,16 +119,17 @@ namespace HomeWork_5
         {
             if (!CheckIsDigit(this.login)) return false;
             if (!CheckChars(this.login)) return false;
+            if (!UseRegex(this.login)) return false;
             return true;
         }
-        //TODO 
-        // сделать регулярку
-        public void UseRegex()
+
+        public bool UseRegex(string login)
         {
-            Regex myReg = new Regex("^[a-z]+[A-Z0-9]{2,10}");
+            string pattern = @"^[\D][\w\d]{1,9}";
+            Regex myReg = new Regex(pattern);
+            if (myReg.IsMatch(login)) return true;
+            else return false;
         }
-
-
     }
 }
 
