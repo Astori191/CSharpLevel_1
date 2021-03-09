@@ -76,7 +76,6 @@ namespace HomeWork_5
             symbols = symbols.Replace(" ", "");
             return symbols;
         }
-
         private static bool CheckIsDigit(string login)
         {
             char firstSymbol = login[0];
@@ -124,7 +123,7 @@ namespace HomeWork_5
         }
 
         public bool UseRegex(string login)
-        {
+        {   
             string pattern = @"^[\D][\w\d]{1,9}$";
             Regex myReg = new Regex(pattern);
             if (myReg.IsMatch(login)) return true;
