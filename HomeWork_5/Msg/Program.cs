@@ -6,16 +6,16 @@ namespace Msg
     {
         static void Main()
         {
-            string text = "One two three four five six seven eight nine ten longword stepanov";
+            string text = "One two three four five wordword six seven eight nine ten longword longlong ";
             ClassMessage message = new ClassMessage(text);
 
-            //message.PrintWordsContainsNLetters(4);
+            message.PrintWordsContainsNLetters(4);
             Console.WriteLine();
-            //message.RemoveWords('e');
+            message.RemoveWords('e');
             Console.WriteLine();
-            message.FindMaxLengthWord();
+            message.PrintLongWords();
             Console.WriteLine();
-            //message.UseStringBuilder();
+            message.UseStringBuilder();
         }
     }
 }

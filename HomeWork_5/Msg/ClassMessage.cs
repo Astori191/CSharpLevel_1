@@ -50,51 +50,48 @@ namespace Msg
             Console.WriteLine($"\n {toChange}");
         }
 
-
-        // TODO
-        // Коряво работает
-       public int FindMaxLengthWord()
+       private List<string> FindMaxLengthWord()
         {
             string[] t = message.Split(' ');
             string maxLengthWord = t[0];
-            List<string> w = new List<string>();
-            var max = 0;
+            List<string> londWords = new List<string>();          
+            int max = 0;
+
             foreach (var word in t)
             {
-                if (word.Length >= maxLengthWord.Length)
+                if (word.Length > maxLengthWord.Length)
                 {
-
-                    maxLengthWord = word;
-                    for (int i = 0; i < 1; i++)
-                    {
-                        w.Add(word);
-                        if (w[i].Length == maxLengthWord.Length) continue;
-                        else
-                        {
-                            w.Remove(word);
-                        }                       
-                    }
-                    
+                    londWords.Clear();
+                    maxLengthWord = word;                    
                     max = maxLengthWord.Length;
                 }
+                if (word.Length == max) londWords.Add(word);
             }
-            //Console.WriteLine(maxLengthWord);
-            return max;
+            return londWords;
+        }
+
+        public void PrintLongWords()
+        {
+            List<string> londWords = FindMaxLengthWord();
+            foreach (var word in londWords)
+            {
+                Console.WriteLine($"List: {word}");
+            }
+
         }
 
         public void UseStringBuilder()
         {
             string[] t = message.Split(' ');
-            int max = FindMaxLengthWord();
+            List<string> londWords = FindMaxLengthWord();
+
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < t.Length; i++)
+            for (int i = 0; i < londWords.Count; i++)
             {
-                if (t[i].Length == max)
-                {
-                    sb.Append(t[i]);
-                }
+                sb.Append(londWords[i]);
+                sb.Append(' ');
             }
-            Console.WriteLine(sb.ToString());
+            Console.WriteLine($"Using StringBilder: {sb}");
         }
     }
 }
