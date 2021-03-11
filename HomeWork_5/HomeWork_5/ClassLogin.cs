@@ -124,7 +124,7 @@ namespace HomeWork_5
 
         public bool UseRegex(string login)
         {   
-            string pattern = @"^[\D][\w\d]{1,9}$";
+            string pattern = @"^[\w][\w\d]{1,9}$";
             Regex myReg = new Regex(pattern);
             if (myReg.IsMatch(login)) return true;
             else return false;
