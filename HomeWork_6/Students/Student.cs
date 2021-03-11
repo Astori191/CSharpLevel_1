@@ -121,6 +121,15 @@ namespace Students
             return String.Compare(s1.age.ToString(), s2.age.ToString());
         }
 
+        private int CompareByAgeAndCourse(Student s1, Student s2)
+        {
+            if (s1.course > s2.course) return 1;
+            if (s2.course < s1.course) return -1;
+            if (s1.age > s2.age) return 1;
+            if (s2.age < s1.age) return -1;
+            return 0;
+        }
+
         public void ListSortByAge(string path)
         {
             List<Student> list = ReadFromFile(path);
@@ -128,6 +137,16 @@ namespace Students
             foreach (var item in list)
             {
                 Console.WriteLine($"{item.firstName} {item.lastName} {item.age}");
+            }
+        }
+     
+        public void ListSortByAgeAndCourse(string path)
+        {
+            List<Student> list = ReadFromFile(path);
+            list.Sort(new Comparison<Student>(CompareByAgeAndCourse));
+            foreach (var item in list)
+            {
+                Console.WriteLine($"{item.firstName} {item.lastName} {item.age} {item.course}");
             }
         }
     }

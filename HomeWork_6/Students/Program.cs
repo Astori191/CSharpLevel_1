@@ -20,6 +20,8 @@ namespace Students
             student.PrintStudents5thAnd6thYear(path);
             student.PrintStudentsAgeFrom18To20(path);
             student.ListSortByAge(path);
+            Console.WriteLine();
+            student.ListSortByAgeAndCourse(path);
         }
     }
 }
