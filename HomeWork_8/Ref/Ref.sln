@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ref", "Ref\Ref.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NumUpDown", "NumUpDown\NumUpDown.csproj", "{989B50A1-E91D-468B-A6AF-1202D642561F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert", "Convert\Convert.csproj", "{CEF32EE7-4CE3-4863-A7F1-38C9D39211E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{989B50A1-E91D-468B-A6AF-1202D642561F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{989B50A1-E91D-468B-A6AF-1202D642561F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{989B50A1-E91D-468B-A6AF-1202D642561F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF32EE7-4CE3-4863-A7F1-38C9D39211E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF32EE7-4CE3-4863-A7F1-38C9D39211E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF32EE7-4CE3-4863-A7F1-38C9D39211E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF32EE7-4CE3-4863-A7F1-38C9D39211E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
